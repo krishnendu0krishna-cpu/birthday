@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, My Love ❤️</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #54263a;
+  text-align: center;
+  background: linear-gradient(145deg, #fff0f4, #f9e9ff, #fff8ee);
+}
+
+header {
+  padding: 55px 18px 35px;
+}
+
+h1 {
+  color: #b33c68;
+  font-size: clamp(2.3rem, 8vw, 4rem);
+}
+
+h2 {
+  color: #b33c68;
+}
+
+p {
+  line-height: 1.8;
+}
+
+section {
+  max-width: 850px;
+  margin: 20px auto;
+  padding: 24px;
+}
+
+.card {
+  background: #ffffffd9;
+  border: 1px solid #f7c6d5;
+  border-radius: 24px;
+  padding: 24px;
+  margin: 18px;
+  box-shadow: 0 12px 35px #a94c6c12;
+}
+
+button {
+  border: none;
+  border-radius: 30px;
+  padding: 14px 23px;
+  margin: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(135deg, #ff7195, #ba6be8);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  border-radius: 17px;
+  border: 3px solid white;
+  box-shadow: 0 5px 18px #b44e7520;
+}
+
+.hidden {
+  display: none;
+}
+
+#letter {
+  white-space: pre-line;
+  line-height: 2;
+  margin-top: 20px;
+}
+
+footer {
+  padding: 28px;
+  color: #b33c68;
+}
+
+.heart {
+  position: fixed;
+  pointer-events: none;
+  z-index: 10;
+  animation: floatUp 2.5s ease-out forwards;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0) scale(.8);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-180px) scale(1.4);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  section {
+    padding: 8px;
+  }
+  .card {
+    margin: 12px 8px;
+    padding: 19px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div style="font-size:2rem">💗 ✨ 🌷 ✨ 💗</div>
+  <p>A LITTLE SURPRISE MADE WITH LOVE</p>
+
+  <h1>Happy Birthday, My Love! 🎂</h1>
+
+  <p>
+    To my favorite person, my safest place,
+    and my happiest thought. 💕
+  </p>
+
+  <button onclick="showSurprise()">
+    Open Your Surprise 💌
+  </button>
+</header>
+
+<section class="card">
+  <h2>💖 A Little Reminder</h2>
+
+  <p>You are so loved, today and every day.</p>
+
+  <p>
+    Out of all the people in this world,
+    my heart is happiest with you. 🥹❤️
+  </p>
+</section>
+
+<section class="card">
+  <h2>📸 Our Little World</h2>
+
+  <p>Some of my favorite moments have you in them.</p>
+
+  <div class="gallery">
+    <img src="photo1.jpg" alt="Our favorite photo">
+    <img src="photo2.jpg" alt="A sweet memory together">
+    <img src="photo3.jpg" alt="Another special memory">
+  </div>
+
+  <p>Every picture holds a little piece of my heart. 💗</p>
+</section>
+
+<section class="card">
+  <h2>💌 A Letter Just for You</h2>
+
+  <p>A few words from my heart to yours.</p>
+
+  <button onclick="toggleLetter()">
+    Read My Letter 💕
+  </button>
+
+  <div id="letter" class="hidden">
+My love,
+
+Happy Birthday to my favorite person! ❤️
+
+You make ordinary days feel special just by being in them.
+Thank you for your smile, your care, and all the little moments
+that have become such precious memories to me.
+
+I hope this new year of your life brings you peace, happiness,
+success, and everything your heart has been wishing for.
+
+Whenever life feels difficult, I hope you remember how special
+you are and how much you mean to me.
+
+If I could wish for one thing, it would be many more memories
+with you — more laughter, more hugs, more adventures, and
+more reasons to smile together.
+
+You are my favorite hello, my hardest goodbye, and one of
+the most beautiful parts of my life.
+
+I love you more than these words can ever explain. 🥹❤️
+
+Forever yours,
+Your girl 💋
+  </div>
+</section>
+
+<section class="card">
+  <h2>🌷 One Last Little Surprise</h2>
+
+  <p>Tap below for a tiny shower of love.</p>
+
+  <button onclick="celebrate()">
+    Send You a Million Hugs 💞
+  </button>
+
+  <p id="celebration"></p>
+</section>
+
+<footer>
+  Made with all my love, just for you. ❤️
+</footer>
+
+<script>
+function showSurprise() {
+  document.getElementById("letter").classList.remove("hidden");
+
+  document.getElementById("letter").scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+}
+
+function toggleLetter() {
+  document.getElementById("letter").classList.toggle("hidden");
+}
+
+function celebrate() {
+  document.getElementById("celebration").textContent =
+    "Sending you all my love, hugs, and kisses! ❤️🥹💋";
+
+  for (let i = 0; i < 32; i++) {
+    const heart = document.createElement("span");
+
+    heart.className = "heart";
+    heart.textContent = ["❤️", "💗", "💕", "✨", "🌷"][i % 5];
+
+    heart.style.left = Math.random() * 96 + "vw";
+    heart.style.top = (45 + Math.random() * 45) + "vh";
+    heart.style.fontSize = (18 + Math.random() * 22) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 2600);
+  }
+}
+</script>
+
+</body>
+</html>
